@@ -1,1 +1,0 @@
-Finsight anta mowa bro. 
