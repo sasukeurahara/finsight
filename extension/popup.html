@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FinSight</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h1>📊 FinSight</h1>
+            <p class="subtitle">AI-Powered Financial Analysis</p>
+            <p class="tech-stack">Groq + FinBERT</p>
+        </header>
+
+        <div class="action-section">
+            <button id="analyzeBtn" class="analyze-btn">
+                <span class="btn-text">Analyze Article</span>
+                <span class="loader" style="display: none;"></span>
+            </button>
+        </div>
+
+        <div id="status" class="status-message"></div>
+
+        <!-- Summary Section -->
+        <div id="summarySection" class="summary-section" style="display: none;">
+            <h3 class="summary-title">📝 AI Summary</h3>
+            <p id="summaryText" class="summary-text"></p>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-container"></div>
+
+        <footer>
+            <p class="footer-text">Powered by Groq (Llama3) + FinBERT + YFinance</p>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>

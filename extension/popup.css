@@ -1,0 +1,64 @@
+/* Tech stack badge */
+.tech-stack {
+    font-size: 11px;
+    opacity: 0.8;
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+/* Summary Section */
+.summary-section {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.summary-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.summary-text {
+    font-size: 13px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Enhanced stock info */
+.stock-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9fafb;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.stock-detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-detail-label {
+    color: #6b7280;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stock-detail-value {
+    color: #1f2937;
+    font-weight: 600;
+    margin-top: 2px;
+}
