@@ -3,115 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinSight - AI Financial Analysis</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>FinSight - Financial Dashboard</title>
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
+    <!-- Main Container -->
     <div class="container">
-        <!-- Header Section -->
+        
+        <!-- Header Section with Logo -->
         <header class="header">
-            <div class="header-content">
-                <h1 class="title">📊 FinSight</h1>
-                <p class="subtitle">AI-Powered Financial Analysis</p>
-                <div class="tech-badge">
-                    <span class="badge-item">Groq</span>
-                    <span class="badge-divider">+</span>
-                    <span class="badge-item">FinBERT</span>
-                </div>
+            <div class="logo">
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <!-- Background rectangle -->
+                    <rect x="5" y="15" width="25" height="30" fill="#1a3a52" rx="2"/>
+                    <!-- Yellow bar -->
+                    <rect x="10" y="30" width="5" height="15" fill="#f39c12"/>
+                    <!-- Green arrow chart -->
+                    <polyline points="15,35 20,28 25,32 32,20" fill="none" stroke="#27ae60" stroke-width="3"/>
+                    <polygon points="32,20 28,22 30,26" fill="#27ae60"/>
+                </svg>
+                <h1>Finsight</h1>
             </div>
         </header>
 
-        <!-- Action Section -->
-        <div class="action-section">
-            <button id="analyzeBtn" class="analyze-btn">
-                <span class="btn-icon">🔍</span>
-                <span class="btn-text">Analyze Article</span>
-                <div class="loader" style="display: none;">
-                    <div class="spinner"></div>
+        <!-- Key Financial Insights Section -->
+        <section class="insights-section">
+            <h2>Key Financial Insights</h2>
+            <div class="insights-content">
+                <div class="insight-item">
+                    <span class="label">Sentiment:</span>
+                    <span class="value positive">Positive</span>
                 </div>
-            </button>
-            
-            <button id="settingsBtn" class="settings-btn" title="Settings">
-                <span>⚙️</span>
-            </button>
-        </div>
-
-        <!-- Status Message -->
-        <div id="status" class="status-message" style="display: none;">
-            <span class="status-icon"></span>
-            <span class="status-text"></span>
-        </div>
-
-        <!-- Summary Section -->
-        <div id="summarySection" class="summary-section" style="display: none;">
-            <div class="summary-header">
-                <h3 class="summary-title">
-                    <span class="summary-icon">📄</span>
-                    AI Summary
-                </h3>
-                <button class="copy-btn" id="copySummaryBtn" title="Copy summary">
-                    📋
-                </button>
-            </div>
-            <p id="summaryText" class="summary-text"></p>
-        </div>
-
-        <!-- Results Container -->
-        <div id="results" class="results-container"></div>
-
-        <!-- Empty State -->
-        <div id="emptyState" class="empty-state" style="display: none;">
-            <div class="empty-icon">🔍</div>
-            <p class="empty-title">No Companies Detected</p>
-            <p class="empty-subtitle">Try analyzing articles from:</p>
-            <ul class="empty-list">
-                <li>📈 Bloomberg</li>
-                <li>📊 CNBC</li>
-                <li>📰 Reuters Business</li>
-                <li>💼 Wall Street Journal</li>
-                <li>💹 Yahoo Finance</li>
-                <li>📉 MarketWatch</li>
-                <li>💰 Seeking Alpha</li>
-                <li>🏦 Financial Times</li>
-            </ul>
-        </div>
-
-        <!-- Settings Modal -->
-        <div id="settingsModal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>⚙️ Settings</h3>
-                    <button class="modal-close" id="closeSettingsBtn">×</button>
-                </div>
-                <div class="modal-body">
-                    <div class="settings-group">
-                        <label for="apiUrlInput">Backend API URL:</label>
-                        <input 
-                            type="text" 
-                            id="apiUrlInput" 
-                            class="settings-input"
-                            value="http://localhost:8000"
-                            placeholder="http://localhost:8000"
-                        >
-                    </div>
-                    <div class="settings-info">
-                        <p>ℹ️ Make sure the backend server is running before analyzing articles.</p>
-                        <p style="margin-top: 8px;">Run: <code>python app/main.py</code></p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button id="saveSettingsBtn" class="btn-primary">Save Settings</button>
+                <div class="insight-item">
+                    <span class="label">Volatility:</span>
+                    <span class="value volatility">Low</span>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p class="footer-text">Powered by Groq (Llama3) + FinBERT + YFinance</p>
-            <p class="footer-version">v2.0.0</p>
-        </footer>
+        <!-- Three Cards Section -->
+        <section class="cards-section">
+            <!-- Stock Data Card -->
+            <div class="card">
+                <h3>Stock Data</h3>
+                <div class="stock-chart">
+                    <svg width="120" height="80" viewBox="0 0 120 80">
+                        <polyline points="10,60 35,45 60,50 85,30 110,15" 
+                                  fill="none" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
+                        <polygon points="110,15 105,18 107,23" fill="#27ae60"/>
+                    </svg>
+                </div>
+                <p class="stock-info">AAPL <span class="positive">+1.5%</span></p>
+            </div>
+
+            <!-- Market Trends Card -->
+            <div class="card">
+                <h3>Market Trends</h3>
+                <div class="trends-content">
+                    <p><strong>Inflation:</strong> Moderate</p>
+                    <p><strong>Rate Hike:</strong> Likely</p>
+                </div>
+            </div>
+
+            <!-- Company News Card -->
+            <div class="card">
+                <h3>Company News</h3>
+                <div class="news-content">
+                    <p>New Product Launch</p>
+                    <p>Q3 Earnings Beat</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Snapshot Gauge -->
+        <section class="performance-section">
+            <div class="gauge-container">
+                <div class="gauge">
+                    <div class="gauge-segment segment-1"></div>
+                    <div class="gauge-segment segment-2"></div>
+                    <div class="gauge-center"></div>
+                </div>
+            </div>
+            <h3 class="performance-label">Performance Snapshot</h3>
+        </section>
+
     </div>
-
-    <script src="popup.js"></script>
 </body>
 </html>
