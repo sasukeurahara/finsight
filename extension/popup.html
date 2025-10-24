@@ -14,79 +14,66 @@
         <header class="header">
             <div class="logo">
                 <svg width="50" height="50" viewBox="0 0 50 50">
-                    <!-- Background rectangle -->
                     <rect x="5" y="15" width="25" height="30" fill="#1a3a52" rx="2"/>
-                    <!-- Yellow bar -->
                     <rect x="10" y="30" width="5" height="15" fill="#f39c12"/>
-                    <!-- Green arrow chart -->
                     <polyline points="15,35 20,28 25,32 32,20" fill="none" stroke="#27ae60" stroke-width="3"/>
                     <polygon points="32,20 28,22 30,26" fill="#27ae60"/>
                 </svg>
-                <h1>Finsight</h1>
+                <h1>FinSight</h1>
             </div>
         </header>
 
-        <!-- Key Financial Insights Section -->
-        <section class="insights-section">
-            <h2>Key Financial Insights</h2>
-            <div class="insights-content">
-                <div class="insight-item">
-                    <span class="label">Sentiment:</span>
-                    <span class="value positive">Positive</span>
-                </div>
-                <div class="insight-item">
-                    <span class="label">Volatility:</span>
-                    <span class="value volatility">Low</span>
-                </div>
-            </div>
-        </section>
+        <!-- Status Message -->
+        <div id="statusMessage" class="status-message" style="display: none;">
+            <p id="statusText"></p>
+        </div>
 
-        <!-- Three Cards Section -->
-        <section class="cards-section">
-            <!-- Stock Data Card -->
-            <div class="card">
-                <h3>Stock Data</h3>
-                <div class="stock-chart">
-                    <svg width="120" height="80" viewBox="0 0 120 80">
-                        <polyline points="10,60 35,45 60,50 85,30 110,15" 
-                                  fill="none" stroke="#27ae60" stroke-width="3" stroke-linecap="round"/>
-                        <polygon points="110,15 105,18 107,23" fill="#27ae60"/>
-                    </svg>
-                </div>
-                <p class="stock-info">AAPL <span class="positive">+1.5%</span></p>
-            </div>
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing article with AI...</p>
+        </div>
 
-            <!-- Market Trends Card -->
-            <div class="card">
-                <h3>Market Trends</h3>
-                <div class="trends-content">
-                    <p><strong>Inflation:</strong> Moderate</p>
-                    <p><strong>Rate Hike:</strong> Likely</p>
-                </div>
-            </div>
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <p id="errorText"></p>
+            <button id="retryButton">Retry Analysis</button>
+        </div>
 
-            <!-- Company News Card -->
-            <div class="card">
-                <h3>Company News</h3>
-                <div class="news-content">
-                    <p>New Product Launch</p>
-                    <p>Q3 Earnings Beat</p>
+        <!-- Results Section (Hidden Initially) -->
+        <div id="resultsSection" style="display: none;">
+            
+            <!-- Key Financial Insights Section -->
+            <section class="insights-section">
+                <h2>Summary</h2>
+                <div class="insights-content" id="summaryContent">
+                    <p>Loading summary...</p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Performance Snapshot Gauge -->
-        <section class="performance-section">
-            <div class="gauge-container">
-                <div class="gauge">
-                    <div class="gauge-segment segment-1"></div>
-                    <div class="gauge-segment segment-2"></div>
-                    <div class="gauge-center"></div>
-                </div>
+            <!-- Company Cards Section -->
+            <section id="companiesSection" class="companies-section">
+                <!-- Companies will be dynamically inserted here -->
+            </section>
+
+        </div>
+
+        <!-- Instructions (Show when no analysis) -->
+        <div id="instructionsSection" class="instructions-section">
+            <div class="instructions-card">
+                <h2>📊 How to Use FinSight</h2>
+                <ol>
+                    <li>Navigate to any financial news article</li>
+                    <li>Click the FinSight extension icon</li>
+                    <li>Click "Analyze Article" button</li>
+                    <li>View AI-powered insights instantly!</li>
+                </ol>
+                <button id="analyzeButton" class="analyze-button">Analyze Current Page</button>
             </div>
-            <h3 class="performance-label">Performance Snapshot</h3>
-        </section>
+        </div>
 
     </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
