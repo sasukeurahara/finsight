@@ -3,37 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinSight</title>
+    <title>FinSight - AI Financial Analysis</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>📊 FinSight</h1>
-            <p class="subtitle">AI-Powered Financial Analysis</p>
-            <p class="tech-stack">Groq + FinBERT</p>
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">📊 FinSight</h1>
+                <p class="subtitle">AI-Powered Financial Analysis</p>
+                <div class="tech-badge">
+                    <span class="badge-item">Groq</span>
+                    <span class="badge-divider">+</span>
+                    <span class="badge-item">FinBERT</span>
+                </div>
+            </div>
         </header>
 
+        <!-- Action Section -->
         <div class="action-section">
             <button id="analyzeBtn" class="analyze-btn">
+                <span class="btn-icon">🔍</span>
                 <span class="btn-text">Analyze Article</span>
-                <span class="loader" style="display: none;"></span>
+                <div class="loader" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+            </button>
+            
+            <button id="settingsBtn" class="settings-btn" title="Settings">
+                <span>⚙️</span>
             </button>
         </div>
 
-        <div id="status" class="status-message"></div>
+        <!-- Status Message -->
+        <div id="status" class="status-message" style="display: none;">
+            <span class="status-icon"></span>
+            <span class="status-text"></span>
+        </div>
 
         <!-- Summary Section -->
         <div id="summarySection" class="summary-section" style="display: none;">
-            <h3 class="summary-title">📝 AI Summary</h3>
+            <div class="summary-header">
+                <h3 class="summary-title">
+                    <span class="summary-icon">📄</span>
+                    AI Summary
+                </h3>
+                <button class="copy-btn" id="copySummaryBtn" title="Copy summary">
+                    📋
+                </button>
+            </div>
             <p id="summaryText" class="summary-text"></p>
         </div>
 
-        <!-- Results Section -->
+        <!-- Results Container -->
         <div id="results" class="results-container"></div>
 
-        <footer>
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+            <div class="empty-icon">🔍</div>
+            <p class="empty-title">No Companies Detected</p>
+            <p class="empty-subtitle">Try analyzing articles from:</p>
+            <ul class="empty-list">
+                <li>📈 Bloomberg</li>
+                <li>📊 CNBC</li>
+                <li>📰 Reuters Business</li>
+                <li>💼 Wall Street Journal</li>
+                <li>💹 Yahoo Finance</li>
+                <li>📉 MarketWatch</li>
+                <li>💰 Seeking Alpha</li>
+                <li>🏦 Financial Times</li>
+            </ul>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settingsModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>⚙️ Settings</h3>
+                    <button class="modal-close" id="closeSettingsBtn">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="settings-group">
+                        <label for="apiUrlInput">Backend API URL:</label>
+                        <input 
+                            type="text" 
+                            id="apiUrlInput" 
+                            class="settings-input"
+                            value="http://localhost:8000"
+                            placeholder="http://localhost:8000"
+                        >
+                    </div>
+                    <div class="settings-info">
+                        <p>ℹ️ Make sure the backend server is running before analyzing articles.</p>
+                        <p style="margin-top: 8px;">Run: <code>python app/main.py</code></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveSettingsBtn" class="btn-primary">Save Settings</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
             <p class="footer-text">Powered by Groq (Llama3) + FinBERT + YFinance</p>
+            <p class="footer-version">v2.0.0</p>
         </footer>
     </div>
 
